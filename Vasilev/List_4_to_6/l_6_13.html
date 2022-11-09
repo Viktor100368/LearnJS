@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function zero(txt){
+            document.write('<b>'+txt+'</b><br>');
+        }
+        zero.toString = function (){
+            let t = 'Название функции - zero<br>';
+            t += " Количество аргументов - "+this.length+'<br>';
+            return t;
+        }
+        function one(txt){
+            document.write("<b>"+txt+"</b><br>");
+            for(let s in this){
+                document.write(this[s]+'<br>');
+            }
+            document.write('<hr>');
+        }
+        one.toString = function(){
+            let t="Метод one()<br>";
+            t += "Количество аргументов - "+this.length+"<br>";
+            return t;
+        }
+        let A=[];
+        A[0] = zero;
+        A[1] = one;
+        A[0]("Начальный элемент массива");
+        A[1]("Элемент с еденичным индексом");
+    </script>
+    
+</body>
+</html>

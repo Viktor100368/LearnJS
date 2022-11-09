@@ -1,0 +1,36 @@
+body {
+    display:grid;
+    grid-template-areas: 
+    "header444 header444 header444"
+    "main sidebar-1 sidebar-2"
+    "footer footer footer";
+    grid: gap 10px;
+    height: 100vh;
+    margin:0;
+    grid-template-rows: 50px 1fr 100px;
+    grid-template-columns: 1fr 25% 25%;
+}
+#header {
+    padding:20px;
+    background: orange;
+    grid-area:header444;
+}
+#main {
+    padding:20px;
+    background-color: orangered;
+    grid-area:main;
+}
+#sidebar-1, #sidebar-2 {
+    padding:20px;
+    background-color: burlywood;
+    grid-area:sidebar-1;
+}
+#sidebar-2 {
+   
+    grid-area:sidebar-2;
+}
+#footer {
+    padding:20px;
+    background-color: darkcyan;
+    grid-area:footer;
+}

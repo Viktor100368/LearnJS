@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function testArgs(func) {
+            let n = func.length;
+            let words;
+            switch (n) {
+                case 0:
+                    words = " no arguments";
+                    break;
+                case 1:
+                    words = 'one arguments';
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                    words = n + ' argument';
+                    break;
+                default:
+                    words = n + ' arguments';
+            }
+            document.write('Function '+func+' : '+ words+"<br>");
+        }
+        function show(){
+            document.write('All Hello');
+        }
+        function F(a,b,c,d,e,f){
+            return a*b*c*d*e*f;
+        }
+        testArgs(eval);
+        testArgs(Math.pow);
+        testArgs(show);
+        testArgs(F);
+        function getFunc(f1,f2){
+            if(f1.length <= f2.length){
+                return f1
+            }else{
+                return f2;
+            }
+        }
+        let x = getFunc(Math.pow,F)(2,3);
+        document.write(x + "<br>");
+        getFunc(show,eval)();
+    </script>
+
+</body>
+
+</html>

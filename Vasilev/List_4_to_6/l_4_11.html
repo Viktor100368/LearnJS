@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>создание объектов на базе прототипа</h1>
+    <script>
+        let X = {
+            color:'red',
+            number:123,
+            show:function(arg){
+                document.write('<b>'+arg+'</b>:');            
+                for(let s in this){
+                    if(s != 'show'){
+                    document.write(s+"->"+this[s]+" | ");
+                    }
+                }
+                document.write('<br>');
+
+            }
+        }
+        let A=Object.create(X);
+        let B =Object.create(X);
+        showAll();
+        A.color ="yellow";
+        A.number = 321;
+        B.color = 'green';
+        showAll();
+        X.name = 'Prototype';
+        A.state = true;
+        showAll();
+        delete X.number;
+        delete A.color;
+        showAll();
+
+        function showAll(){
+            X.show('X');
+            A.show('A');
+            B.show('B');
+            document.write('<hr>')
+        }
+    </script>
+</body>
+</html>

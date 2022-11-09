@@ -1,0 +1,60 @@
+.container {
+    border:2px solid red;
+    min-height: 300px;
+    display: flex;
+    /* направление оси */
+    flex-direction: row;
+    /* flex-direction: row-reverse;
+    flex-direction: column;
+    flex-direction: column-reverse; */
+
+ /* Поведение  по строкам при уменьщении шиирины */
+    flex-wrap: nowrap;  
+    flex-wrap: wrap;  
+    /* распределение по ширине оси */
+    justify-content: flex-start;
+    /* justify-content: flex-end;
+    justify-content: center;
+    justify-content: space-between;
+    justify-content: space-around; */
+    /* justify-content: space-evenly; */
+
+    /* выравнивание элементов */
+    align-items: flex-start;
+    /* align-items:flex-end;
+    align-items:baseline;
+    align-items:center; */
+    /* align-items:stretch */
+
+    /* Строки внутри контейнера */
+    align-content: flex-start;
+    /* align-content:flex-start;
+    align-content:stretch; */
+}
+.item {
+    /* width: 100px; */
+    /* height: 100px; */
+    background: orangered;
+    font-size: 50px;
+    text-align: center;
+    margin: 10px;
+    line-height: 200%;
+}
+.h200 {
+    height: 200px;
+}
+.h150 {
+    height: 150px;
+}
+.h250 {
+    height: 250px;
+}
+.test-item1 {
+    order:2;
+    flex-grow: 16;
+}
+.test-item2 {
+    order: 1;
+    flex-grow: 2;
+    align-self:flex-end;
+}

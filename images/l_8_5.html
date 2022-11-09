@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let pict, cnv, ctx;
+        let files=['lisa.jpg','enot.jpg','volk.jpg'];
+        let text=['Это лиса','Это енот','Это волк'];
+        let path ='../images/';
+        let sld=0;
+        window.onload = function(){
+            pict = new Image();
+            cnv = document.getElementById('mycanvas');
+            cnv.title = 'Щелкните мышью для просмотра\nследующего изображения';
+            ctx = cnv.getContext('2d');
+            ctx.font = '30px Arial';
+            set();
+
+            pict.onload = function(){
+                ctx.drawImage(pict,15,15);
+            }
+
+            cnv.onclick = function(){
+                sld=(sld+1)%files.length;
+                console.log(1111);
+                set();
+            }
+        }
+
+        function set(){
+            ctx.fillStyle = 'yellow';
+            ctx.fillRect(0,0,cnv.width, cnv.height);
+            ctx.fillStyle= 'blue';
+            pict.src = path + files[sld];
+            ctx.fillText(text[sld],40,230);
+        }
+    </script>
+</head>
+<body>
+    <h3>Listing 8.5</h3>
+    <canvas height="300" width="300" id="mycanvas" style="border:3px solid blue"></canvas>
+    
+</body>
+</html>

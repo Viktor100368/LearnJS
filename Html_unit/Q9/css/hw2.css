@@ -1,0 +1,39 @@
+body {
+    display:grid;
+    grid-template-areas: 
+    "header header header"
+    "aside main aside2"
+    "footer footer footer";
+    margin:0;
+    height: 100vh;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+#header {
+    padding:10px;
+    background: orange;
+    grid-area:header;
+}
+#aside {
+    padding:10px;
+    background:orangered;
+    margin:5px 5px 5px 0;
+    grid-area:aside;
+}
+#main {
+    padding: 10px;
+    background:brown;
+    margin:5px 5px 5px 0;
+    grid-area:main;
+}
+#aside2 {
+    padding:10px;
+    background: orangered;
+    margin:5px 0;
+    grid-area:aside2;    
+}
+#footer {
+    padding: 10px;
+    background:green;
+    grid-area:footer;
+}

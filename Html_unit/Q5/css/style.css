@@ -1,0 +1,33 @@
+.t {
+    width: 600px;
+    height: 300px;
+    margin: 200px auto;
+    border:1px solid black;
+    position: relative;
+  
+}
+.t .s, .t .d, .t .e {
+    position: relative;
+}
+.s {
+    width: 150px;
+    height: 150px;
+    background:orangered;
+ 
+   left:75px;
+}
+
+.d {
+    width: 150px;
+    height: 150px;
+    background: green;
+    left: 225px;
+    top: 0px;
+}
+.e {
+    width: 150px;
+    height: 150px;
+    background: blue;
+    left: 375px;
+    top: -300px;
+}

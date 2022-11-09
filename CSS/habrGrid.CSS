@@ -1,0 +1,50 @@
+/* сбросить стили */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/* стилизируем body */
+body {
+    font-family:sans-serif;
+    font-size:40px;
+    width: 100%;
+    min-height: 100vh;
+}
+/* стилизируем все контейнеры */
+/* [class^='box-'] {
+    background-color: skyblue;
+    display:grid;
+    place-items: center;
+} */
+/*добавим небольщой отступ между контейнерами*/
+.container {
+    width: 200px;
+    border:1px solid black;
+    display:grid;
+   grid-gap: 20px;
+    /* grid-template-columns: repeat(3,1fr); */
+    /* grid-template-rows: 100px auto 200px; */
+    grid-template-areas: 
+    "6 C 4"
+    "1 2 3"
+    "A 5 B";
+    /* justify-items: center; */
+}
+.btn {
+    width: 50px;
+    height: 50px;
+    background: grey;
+}
+.box-1 {
+    grid-area: A;  
+    background:lightblue;
+}
+.box-2 {
+    grid-area:B;   
+    background:lightcoral;
+}
+.box-3 {
+    grid-area:C;
+    background:lightgreen;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function MyObject(name,number){
+            this.name=name;
+            this.number=number;
+            this.show = function(){
+                for(let s in this){
+                    if(s !='show'){
+                        document.write(`${s} -> ${this[s]} | `);
+                    }
+                }
+                document.write('<br>');
+            }
+        }
+        let A = new MyObject('Object A',100);
+        let B = new MyObject('Object B',200);
+        document.write('<b>Свойства созданных объектов: </b><br>');
+        A.show();
+        B.show();
+        MyObject.prototype.color= 'прозрачный';
+        document.write('<b>После добавления свойства :</b><br>');
+        A.show();
+        B.show();
+        A.color = 'Белый';
+        delete MyObject.prototype.color;
+        document.write('<b>После удаления свойства</b><br>');
+        A.show();
+        B.show();
+        document.write('<b>Проверка прототипа объекта :</b><br>');
+        let txt = "Object.getPrototypeOf(A) == MyObject.prototype";
+        document.write(txt+' -> '+eval(txt));
+    </script>
+    
+</body>
+</html>

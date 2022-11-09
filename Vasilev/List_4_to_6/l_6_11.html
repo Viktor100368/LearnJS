@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function f(text,number){
+        this.text = text;
+        this.number = number;
+    }
+    let A = {};
+    let B = {show:function (){
+        for(let s in this){
+            document.write(`${s} : ${this[s]}<br>`);
+        }
+    }}
+    let C = {};
+    C.method=f;
+    f('funcion',100);
+    f.call(A,'object A',200);
+    f.apply(B,['Object B',300]);
+    C.method('Object C',400);
+    document.write(text+' | '+number+'<br>');
+    document.write(A.text+' | '+A.number+'<br>');
+    document.write(B.text+' | '+B.number+'<br>');
+    document.write(C.text+' | '+C.number+"<br>");
+    document.write(('f' in A)+'<br>');
+    document.write(('f' in B)+"<br>");
+    document.write(('f' in C)+"<br>");
+
+    document.write("<b>Object B: </b><br>");
+    B.show();
+    document.write('<b>Object A: </b><br>');
+    B.show.call(A);
+    document.write('<b>Object C: </b><br>');
+    B['show'].call(C);
+    </script>
+</body>
+</html>

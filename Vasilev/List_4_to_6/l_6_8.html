@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Tree(rank,refs,number,code){
+            this.rank = rank;
+            this.number = number ||1;
+            this.code = code || '| ';
+            this.code +=this.rank+' -> '+this.number+' | ';
+            if(this.rank > 1){
+                this.next = new Array(refs);
+                for(let i=0;i<this.next.length;i++){
+                    this.next[i]= new Tree(this.rank-1,refs,i+1,this.code);
+                }
+            }
+        }
+        Tree.prototype.toString= function(){
+            let t='Объект: ранг - '+this.rank+", номер - "+this.number;
+            t+= ', код - '+this.code+'<br>';
+            if(this.rank>1){
+                for(let k=0;k<this.next.length;k++){
+                    t += this.next[k].toString();
+                }
+            }
+            return t;
+        }
+        let myTree = new Tree(4,2);
+        document.write(myTree);
+    </script>
+    
+</body>
+</html>

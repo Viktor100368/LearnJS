@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for(let x=-1;x<=1;x+=2){
+            try{
+                document.write('Начало внешнего <code>try-catch</code> блока<br>');
+                try{
+                    document.write("Начало внутреннего <code>try-catch</code> блока <br>");
+                    let A = new Array(x);
+                    let B = C;
+                }catch(e){
+                    if(e.name == "RangeError"){
+                        e.message = "Неверный размер массива (ошибка <code>RangeError</code>)";
+                        throw e;
+                    }
+                    document.write('Некорректное присваивание');
+                }finally{
+                    document.write("Завершение внутреннего <code>try-catch</code> блока<br>");
+                }
+                document.write("Ошибки <code>RangeError</code> не было<br>");
+            
+            }catch(err){
+                document.write(err.message+"<br>");
+            }
+            document.write("Звершение внешнего <code>try-catch</code> блока<hr>");
+        }
+    </script>
+    
+</body>
+</html>

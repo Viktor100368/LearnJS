@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        try {
+            document.write("Начало выполнения <code>try</code><br>");
+            let txt = prompt("Введите выражение для вычисления", 0);
+            document.write('результат вычисления выражения ' + eval(txt)+'<br>');
+            document.write('Выполнение <code>try</code> - ,блока завершено <br>');
+        } catch (e) {
+            let name = e.name;
+            let message = e.message;
+            let str;
+            switch (name) {
+                case "ReferenceError":
+                    str = 'Некорректная ошибка';
+                    break;
+                case "SyntaxError":
+                    str = "Синтаксическая ошибка";
+                    break;
+                default:
+                    str = 'Ошибка' + name;
+            }
+            document.write('<b> Внимание произошла ошибка!</b><br>');
+            document.write('<b> Тип ошибки:</b>'+str+'<br>');
+            document.write("<br>Описание ошибки</b>"+message+'<br>');
+            if('fileName' in e){
+                document.write("<b>Файл с ошибкой</b>"+e.fileName+'<br>');
+            }
+        }
+        document.write("Выполнение сценария завершено");
+    </script>
+</body>
+
+</html>

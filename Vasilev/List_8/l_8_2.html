@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let inFld, outFld, inStl, outStl;
+            outFld = document.getElementById('outFld');
+            outStl = outFld.style;
+            outStl.height = '50px';
+            outStl.width = '400px';
+            outStl.background='white';
+            outStl.borderColor = 'magenta';
+            outStl.borderBottomRightRadius = '30px';
+            outStl.borderTopLeftRadius = "30px";
+            outStl.borderWidth = "5px";
+            outStl.margin = '5px';
+            outStl.padding = '2px 10px 2px 10px';
+            outStl.letterSpacing = '7px';
+            outStl.fontFamily = "Times New Roman";
+            outStl.fontStyle = 'italic';
+            outStl.fontWeight = '900';
+            outStl.color = 'red';
+            outStl.fontSize = "18pt";
+            outFld.readOnly = 'true';
+            outFld.value = '';
+            inFld=document.getElementById('inFld') ;
+            inStl=inFld.style;
+            inStl.height ='30px';
+            inStl.width = '400px';
+            inStl.borderWidth = '5px';
+            inStl.borderStyle = "dotted";
+            inStl.borderLeftColor = '#ff0000';
+            inStl.borderTopColor = '#00ff00';
+            inStl.borderRightColor ='#0000ff';
+            inStl.borderBottomColor ='#000000';
+            inStl.padding = '2px 10px 2px 10px';
+            inStl.margin= '5px';
+            inStl.fontSize = '15pt';
+            inStl.color = 'blue';
+            inFld.value = '';
+            inFld.focus();
+            inFld.onkeyup = function(){
+                outFld.value = this.value;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Листинг 8.2</h3>
+    <p>Введенное в нижнее поле текст дублируется в верхнем поле</p>
+    <div><input type="text" id="outFld"></div>
+    <div><input type="text" id = inFld></div>
+</body>
+</html>

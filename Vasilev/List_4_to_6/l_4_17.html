@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let A = {number:100};
+        Object.prototype.name='Object A';
+        for(let a in A){
+            document.write(a+' | ');
+        }
+        test("'toString' in A");
+        test("'valueOf' in A");
+        test("'constructor' in A");
+        function test(x){
+            document.write("<br>"+x+' -> '+eval(x));
+        }
+    </script>
+    
+</body>
+</html>

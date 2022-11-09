@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .in1 {
+            background-color: yellow;
+        }
+
+        .out {
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Листинг 7.11</h3>
+    У вас осталось <b class="out">20</b> секунд<br>
+    <section>
+        <input type="text" class="in1">
+        <button class="btn1">Угадать</button>
+    </section>
+    <div class="note">Попробуйте угадать число</div>
+    <script>
+        let input = document.querySelector('.in1');
+        let out = document.querySelector('.out');
+        let button = document.querySelector('.btn1');
+        let note = document.querySelector('.note');
+
+        let hidenNumber = Math.abs(Math.floor(Math.random() * 10));
+        button.disabled = false;
+        let interval = parseInt(out.innerHTML);
+        let enable = false;
+
+
+        const si = setInterval(function () {
+            timerInterval();
+        }, 1000);
+
+       // console.log('hidenNumber ' + hidenNumber);
+
+        const timerInterval = function () {
+            enable = true;
+            interval--;
+            console.log(interval);
+            out.innerHTML = interval;
+
+            if (interval == 0) {
+                note.innerHTML = "Время истекло, вы не угадали, загаданое число = " + hidenNumber;
+                allStop();
+                clearInterval(si);
+            }
+        }
+
+        button.addEventListener('click', function () {
+            let inputNumber = +input.value;
+            if (checkInput(inputNumber)) {
+                clearInterval(si);
+                allStop();
+                note.innerHTML = "Вы угадали " + inputNumber;
+            } else {
+                note.innerHTML = "Вы не угадали";
+                setTimeout(() => note.innerHTML = 'Попробуйте еще раз', 1000);
+            }
+            console.log(inputNumber);
+        });
+
+        function checkInput(input) {
+
+            if (input == hidenNumber) {
+                return true;
+            } else
+                return false;
+        }
+
+        function allStop() {
+            button.disabled = true;
+            input.disabled = true;
+        }
+    </script>
+
+</body>
+
+</html>

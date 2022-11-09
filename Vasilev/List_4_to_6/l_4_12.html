@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Добавление свойств в прототип верхнего уровня</h2>
+    <script>
+
+        let txt= '"name" in Math';
+        document.write(txt+" -> "+ eval(txt)+"<br>");
+        let A = {color:"Красный"};
+        let B = new Object();
+        B.number = 100;
+        showAll();
+        Object.prototype.name = 'объект A';
+        document.write(txt+' -> '+eval(txt)+"<br>");
+        showAll();
+        B.name="Объект B";
+        document.write("Math.name -> "+Math.name+"<br>");
+        showAll();
+        delete Object.prototype.name;
+        document.write(txt+" -> "+ eval(txt)+"<br>");
+        showAll();
+        function show(obj){
+            for(let s in obj){
+                document.write(" "+s+" -> "+ obj[s]+" | ");
+            }
+            document.write("<br>");
+        }
+        function showAll(){
+            document.write("Объект A");
+            show(A);
+            document.write("Объект B");
+            show(B);
+            document.write("<br>");
+        }
+    </script>
+</body>
+
+</html>

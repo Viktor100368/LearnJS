@@ -1,0 +1,67 @@
+.calc{
+    width: 300px;
+    height: 500px;
+    border:1px solid #000;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: Arial;
+    color:white;
+}
+.screen{
+    width: 270px;
+    height: 70px;
+    /* border:1px solid white;
+    margin-top: 10px;
+    margin-left:25px;
+    border-radius:15px; */
+    display: grid;
+    justify-items: end;
+    align-items: end;
+    margin-bottom: 25px;
+}
+.screen p{
+    text-align:right;
+    font-size:4rem;
+}
+.buttons{
+    margin-top: 100px;
+    /* border:1px solid #000; */
+    display:grid;
+    grid-template-areas:
+    'ac plus-minus percent divisor'
+    "seven eight nine multiply"
+    "four five six minus"
+    "one two three plus"
+    "zero zero dote equal";
+    grid-gap:7px;
+    justify-items:center;
+}
+.btn{
+    width: 50px;
+    height: 50px;
+    background: #333;
+    border-radius: 50%;
+    text-align:center;
+    line-height:50px;
+    font-size:1.5rem;
+    cursor:pointer;
+    user-select:none;
+
+}
+.zero{
+    grid-area:zero;
+    width:90%;
+    border-radius:34px;
+}
+.btn:hover{
+    filter:brightness(130%);
+}
+.btn:active{
+    filter:brightness(80%);
+}
+.btn.bg-grey{
+    background-color:darkgray;
+}
+.btn.bg-orange{
+    background-color:darkorange;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    window.onload = function(){
+        document.getElementById('divGreen').onclick = function(){
+            showColor('Зеленый');
+        } 
+        document.getElementById('divYellow').onclick = function(){
+            showColor('Желтый');
+        }
+             
+        document.getElementById('divRed').onclick = function(){
+            showColor("Красный");
+        }
+    }
+    function showColor(clr){
+        let txt = "<b>"+clr+'</b><br>';
+        document.getElementById("result").innerHTML+= txt;
+    }
+    </script>
+</head>
+<body>
+    <h3>Листинг 8.9</h3>
+    <div id="divGreen" style="width:200px;height:200px;background-color:green">
+    <div id="divYellow" style="width:140px;height:140px;background-color:yellow">
+    <div id="divRed" style="width:80px;height:80px;background-color:red">
+    </div>
+    </div>
+    </div>
+
+    <!--текстовый блок-->
+    <p id="result" style="width:170px;height:70px;border-style:ridge;padding:10px"></p>
+</body>
+</html>

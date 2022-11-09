@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let objA={
+            name:'Иван Петров',
+            age:30,
+            show:function(){
+                document.write('<u>Имя</u>: '+this.name+'<br>');
+                document.write('<u>Возраст</u>: '+this.age+"<br>");
+            }
+        }
+        objA.show();
+        let objB=objA;
+        document.write('<b>Объект objB: </b><br>');
+        objB.show();
+        objA.name='Петр Иванов';
+        objA.age++;
+        objA.show();
+        objB.show();
+    </script>
+    
+</body>
+</html>

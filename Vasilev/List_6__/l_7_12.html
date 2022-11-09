@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Листинг 7.12</h3>
+    Используем методы setTimeout() и clearTimeout()
+    <hr>
+    <p class="myBlock"></p>
+    <hr>
+    
+</body>
+    <script>
+        let myBlock= document.querySelector('.myBlock');; 
+        let num  = 5;
+        let st;
+        window.onload = function(){
+          //  myBlock 
+        let txt = "Через "+num+" секунд появится сообщение ";
+        txt +='<button onclick="mackeclick()">Отменить</button>';
+        myBlock.innerHTML=txt;
+        st=setTimeout(show,num*1000,"Использован метод setTimeout()");
+        }
+        function show(str){
+            alert(str);
+            myBlock.innerHTML= "Сообщение было показано";
+        }
+        function mackeclick(){
+            myBlock.innerHTML = 'Сообщение показано не будет';
+            clearTimeout(st);
+        }
+    </script>
+</html>

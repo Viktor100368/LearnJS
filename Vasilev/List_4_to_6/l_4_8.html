@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("<h4>Цвета</h4>");
+        let colors={
+            red:"Красный",
+            yellow:"Желтый",
+            green:"Зеленый",
+        }
+        for(let key in colors){
+            document.write(key + " : "+colors[key]+'<br>');
+        }
+        let a='red' in colors;
+        let b = 'blue' in colors;
+        console.log('red -'+ a);
+        console.log('blue - '+ b);
+        delete colors.red;
+        a='red' in colors;
+        b = 'blue' in colors;
+        console.log('red -'+ a);
+        console.log('blue - '+ b);
+    </script>
+</body>
+</html>

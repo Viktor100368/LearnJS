@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Object.prototype.toString = function(){
+            let t = '<u>Собственные свойства объекта:</u><br>';
+            for(let s in this){
+                t +='<b>'+s+' </b> '+this[s]+'<br>';
+            }
+            return t;
+        }
+        Object.prototype.valueOf = function(){
+            return Object.keys(this).length;
+        }
+        let A ={one:100,two:200,three:300,four:400,five:500};
+        document.write(A);
+        document.write("Количество свойств в объекте "+A+"<br>");
+        let B = {first:"one",second:'two',thrid:'three'};
+        document.write(B);
+        document.write("Количество свойств в объекте "+B+"<br>");
+        
+        function Person(name,age,gender){
+            let g;
+            if(gender==true){
+               g='муж';
+            }else{
+                g="жен";
+            }
+            this.name = name;
+            this.age = age;
+            Object.defineProperty(this,'gender',{
+                get:function(){
+                    return g;
+                }
+            })
+        }
+        Person.prototype.toString = function(){
+            let t='<u>Персональные данные:</u><br>';
+            t += '<b>Имя: </b> '+this.name+"<br>";
+            t += "<b>Возраст:</b> "+this+" лет<br>";
+            t += "<b>Пол: </b> "+this.gender+'<br>';
+            return t;
+        }
+        Person.prototype.valueOf = function(){
+            return this.age;
+        }
+        let X = new Person('Ирина',20,false);
+        let Y = new Person('Андрей',25,true);
+        document.write(X.toString());
+        document.write(Y);
+        document.write('Возраст Ирины '+X.valueOf()+' лет<br>');
+        document.write('Возраст Андрея '+Y+' лет');
+    </script>
+</body>
+</html>

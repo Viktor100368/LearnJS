@@ -1,0 +1,55 @@
+. {
+    margin:0;
+    box-sizing:border;
+}
+.container {
+    max-width: 1200px;
+    background:lemonchiffon;
+    margin:0 auto;
+    padding:10px;
+   min-height: 100vh;
+}
+.container::after {
+    content:'';
+    display: block;
+    clear: both;
+}
+.one, .two, .three, .four {
+    float:left;
+    height: 50vh;
+    width: 25%;
+}
+.one {
+    background: orange;    
+}
+.two {
+    background: orangered;
+}
+.three {
+    background:darkcyan;
+}
+.four {
+    background:lightskyblue;
+}
+@media (max-width:800px) {
+    .container {
+        background:lawngreen;
+    }
+    .one, .two {
+        width: 50%;
+    }
+    .three, .four {
+        width: 50%;
+    }
+}
+@media (max-width:600px) {
+    .container {
+        background:lightcoral;
+    }
+    .one, .two {
+        width: 100%;
+    }
+    .three, .four {
+        width: 100%;
+    }
+}

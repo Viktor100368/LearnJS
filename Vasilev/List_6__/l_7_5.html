@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function openWindow(){
+            if(window.mywindow && !mywindow.closed){
+                alert('документ уже открыт');
+            }else{
+                window.mywindow = open('myhello.html');
+            }
+        }
+        function closeWindow(){
+            if(window.mywindow && !mywindow.closed){
+                window.mywindow.close();
+                window.mywindow = null;
+            }else{
+                alert("Окно уже закрыто");
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <b>Открытие и закрытие окна</b>
+    <a href="javascript:openWindow()">открыть файл myhello.html</a><br>
+    <a href="javascript:closeWindow()">закрыть файл myhello.html</a>
+</body>
+</html>
