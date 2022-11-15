@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Таблицы синусов и т.д.</h1>
+    <table>
+        <script>
+            let arr = [0,15,30,45,60,75,90];
+           
+            for(let i=0;i<arr.length;i++){
+                let r=Math.PI/180*arr[i];
+                document.write("<tr><td>",arr[i]," </td><td>",Math.sin(r),"</td></tr>");
+            }
+           
+            for(let i=0;i<arr.length;i++){
+                let r=Math.PI/180*arr[i];
+                document.write("<tr><td>",arr[i]," </td><td>",Math.cos(r),"</td></tr>");
+            }
+           
+            for(let i=0;i<arr.length;i++){
+                let r=Math.PI/180*arr[i];
+                document.write("<tr><td>",arr[i]," </td><td>",Math.tan(r),"</td></tr>");
+            }
+          
+            // let angle, ar;
+            //     const c = Math.PI / 180;
+            //     for (angle = 0; angle <= 90; angle += 15) {
+            //         ar = angle * c;
+            //         window.document.write('<tr>');
+            //         window.document.write('<td>', angle, '</td>');
+            //         window.document.write('<td>', Math.sin(ar), '</td>');
+            //         window.document.write('<td>', Math.cos(ar), '</td>');
+            //         window.document.write('<td>', Math.tan(ar), '</td>');
+            //         window.document.write('</tr>');                    
+            //     }
+            
+        </script>
+    </table>
+</body>
+</html>

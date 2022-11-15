@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вычисление длины окружности</title>
+</head>
+
+<body>
+    <h2>Вычисление длины окружности </h2>
+    <table>
+        <script>
+            function length(d) {
+                return d * Math.PI;
+            }
+            // document.write("длина окружности диамтром 2м равна "+length(2)+"<br>");  
+            // document.write("длина окружности диамтром 5м равна "+length(5)+"<br>"); 
+            // document.write("длина окружности диамтром 10м равна "+length(10)+"<br>"); 
+            // document.write("длина окружности диамтром 20м равна "+length(20)+"<br>");   
+            document.write('<p>Длина окружности равна</p>');
+            document.write('<tr><td>2</td><td> ', length(2), '</td></tr>');
+            document.write('<tr><td>5</td><td> ', length(5), '</td></tr>');
+            document.write("<tr><td>10</td><td> ", length(10), "</td></tr>");
+            document.write("<tr><td>20</td><td> ", length(20), "</td></tr>");
+        </script>
+    </table>
+</body>
+
+</html>

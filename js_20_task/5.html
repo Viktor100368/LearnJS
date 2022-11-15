@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function circleLength(d){
+            let l;
+            if(typeof(d) !="number"){
+                const ex = new TypeError();
+                ex.message ="Допустимы только числа";
+                throw ex;
+            }
+            l=d*Math.PI;
+            return l;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        document.write("<tr><td>yte</td>");
+            document.write('<td>')
+                try{
+                    //Пытаемся вызвать функцию circleLength, передав ей строку 'yte',
+                    //и вывести возвращенный ей результат на экран
+                    document.write(circleLength('yte'));
+                }catch(ex){
+                    //Если функция сгенерировала исключение, выводим соолщение об ошибке
+                    document.write(ex.message);
+                }
+                finally{
+                    //В любм случае выводим закрывающие теги
+                    document.write('</td></tr>');
+                }
+    </script>    
+</body>
+</html>

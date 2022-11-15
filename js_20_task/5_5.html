@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function average() {
+            let sum = 0;
+            let count = 0,
+                i = 0;
+            // console.log("argument: "+arguments.length);
+            do {
+                if (typeof (arguments[i]) === "number") {
+                    sum += arguments[i];
+                    count++;
+                } else if (typeof (arguments[i] === "string")) {
+                    const e = new TypeError();
+                    e.message = "Допустимы только числа";
+                    throw e;
+                }
+
+                i++;
+            } while (i < arguments.length)
+            return sum / count;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Получение среднего</h2>
+    <script>
+        try {
+            document.write(average(10, 20, 30, 40, 50, 60, 70, 80, 90, 100) + "<br>");
+            document.write(average('10', '20', '30', '40', '50', '60', '70', '80', '90', '100'));
+            // document.write(average());
+        } catch (e) {
+            document.write(e.message + "<br>");
+        }
+        try {
+            document.write(average());
+        } catch (e) {
+            document.write(e.message);
+        }
+    </script>
+</body>
+
+</html>
