@@ -1,0 +1,3 @@
+let memory = Object.create(cpu);
+memory.memory='';
+memory.family='';
